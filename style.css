@@ -226,6 +226,16 @@ nav {
         height: 520px;
         background: #fff;
       }
+      .news-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-link:hover .news-card {
+  background: #fbd9e6;
+  cursor: pointer;
+}
 
       .box-title {
         font-weight: 600;
