@@ -162,7 +162,6 @@ nav {
 }
 
 .hero-arrow {
-
   z-index: 5;
 }
 
@@ -172,7 +171,31 @@ nav {
 }
 
 .section-padding {
-  padding: 80px 0;
+  padding: 50px 0;
+}
+.ticker-track {
+  animation: tickerMove 15s linear infinite;
+  white-space: nowrap;
+}
+
+/* Hover to stop */
+.ticker-track:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.l-item:hover{
+  text-decoration: none;
+  color: black;
+}
+@keyframes tickerMove {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* About Section */
