@@ -206,6 +206,66 @@ nav {
   50%  { opacity: 0; }
   100% { opacity: 1; }
 }
+/* evnet section*/
+      .marquee {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .marquee-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .news-box {
+        border: 1px solid #bbb;
+        border-radius: 10px;
+        padding: 18px;
+        height: 520px;
+        background: #fff;
+      }
+
+      .box-title {
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .news-scroll {
+        height: 440px;
+        padding-right: 10px;
+      }
+
+      .news-card {
+        background: #93b7ee;
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin-bottom: 18px;
+      }
+
+      .news-date {
+        color: #a0004d;
+        font-weight: 600;
+        margin-bottom: 6px;
+        font-size: 14px;
+      }
+
+      .news-text {
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* Optional scrollbar styling */
+      .news-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .news-scroll::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+      }
 
 /* About Section */
 #about {
