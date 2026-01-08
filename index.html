@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Website</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="header-section">
+      <div class="container-fluid p-0">
+        <img
+          src="/college_website/images/header.png"
+          alt="College Header"
+          class="header-img"
+        />
+      </div>
+    </section>
+    <section class="bg-warning d-flex align-items-center">
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+          <ul class="navbar-nav mx-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-house"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About us</a>
+            </li>
+
+            <!-- Academics -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                Academics
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Courses</a></li>
+
+                <li><a class="dropdown-item" href="#">Departments</a></li>
+              </ul>
+            </li>
+
+            <!-- Admission -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                Admission
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">UG</a></li>
+                <li><a class="dropdown-item" href="#">PG</a></li>
+              </ul>
+            </li>
+
+            <!-- Facility -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                Facility
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Library</a></li>
+                <li><a class="dropdown-item" href="#">Hostel</a></li>
+              </ul>
+            </li>
+
+            <!-- Colleges -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                Colleges
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Engineering</a></li>
+                <li><a class="dropdown-item" href="#">Science</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#research">Research</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#cell">Cell/Misc</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+
+    <section class="hero" id="home">
+      <div id="heroCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div
+              class="hero-slide"
+              style="background-image: url('./images/image1.png')"
+            ></div>
+          </div>
+
+          <div class="carousel-item">
+            <div
+              class="hero-slide"
+              style="background-image: url('./images/image3.png')"
+            ></div>
+          </div>
+
+          <div class="carousel-item">
+            <div
+              class="hero-slide"
+              style="background-image: url('./images/image4.png')"
+            ></div>
+          </div>
+        </div>
+
+        <!-- LEFT ARROW -->
+        <button
+          class="carousel-control-prev hero-arrow"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <!-- RIGHT ARROW -->
+        <button
+          class="carousel-control-next hero-arrow"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">About Us</h2>
+          <p class="lead text-muted mt-4 fw-semibold">
+            Excellence in Education Since 1960
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="about-card text-center">
+              <i class="fas fa-graduation-cap about-icon"></i>
+              <h4>Our Mission</h4>
+              <p class="text-black">
+                To provide world-class education and foster innovation, critical
+                thinking, and leadership among students.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="about-card text-center">
+              <i class="fas fa-lightbulb about-icon"></i>
+              <h4>Our Vision</h4>
+              <p class="text-black">
+                To be a globally recognized institution of higher learning that
+                transforms lives and contributes to society.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="about-card text-center">
+              <i class="fas fa-trophy about-icon"></i>
+              <h4>Our Values</h4>
+              <p class="text-black">
+                Integrity, excellence, innovation, diversity, and commitment to
+                sustainable development and social responsibility.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-8 mx-auto">
+            <p class="text-center lead fw-medium">
+              Our institution has been at the forefront of academic excellence
+              for over six decades. With state-of-the-art facilities,
+              distinguished faculty, and a vibrant campus life, we nurture the
+              next generation of leaders, innovators, and change-makers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Leadership Messages -->
+        <div class="row mt-5 g-4">
+          <div class="col-lg-4">
+            <div class="leadership-card">
+              <div class="leader-img-wrapper">
+                <img
+                  src=""
+                  alt="Chancellor"
+                  class="leader-img"
+                />
+              </div>
+              <div class="leader-content">
+                <h4 class="leader-name">Dr. Rajesh Kumar</h4>
+                <p class="leader-title">Chancellor</p>
+                <p class="leader-message">
+                  "It is with great pride that I welcome you to our esteemed
+                  university. Our commitment to academic excellence, research
+                  innovation, and holistic development ensures that every
+                  student is prepared to excel in their chosen field and
+                  contribute meaningfully to society."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="leadership-card">
+              <div class="leader-img-wrapper">
+                <img
+                  src=""
+                  alt="Vice Chancellor"
+                  class="leader-img"
+                />
+              </div>
+              <div class="leader-content">
+                <h4 class="leader-name">Prof. Anjali Sharma</h4>
+                <p class="leader-title">Vice Chancellor</p>
+                <p class="leader-message">
+                  "As Vice Chancellor, I am dedicated to fostering an
+                  environment of academic rigor and creative exploration. Our
+                  university stands as a beacon of knowledge, where tradition
+                  meets innovation, preparing students for the challenges of
+                  tomorrow."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="leadership-card">
+              <div class="leader-img-wrapper">
+                <img
+                  src=""
+                  alt="Registrar"
+                  class="leader-img"
+                />
+              </div>
+              <div class="leader-content">
+                <h4 class="leader-name">Dr. Suresh Patel</h4>
+                <p class="leader-title">Registrar</p>
+                <p class="leader-message">
+                  "The Registrar's office is committed to ensuring smooth
+                  administrative operations and maintaining the highest
+                  standards of academic integrity. We are here to support
+                  students, faculty, and staff in achieving their goals."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">15,000+</div>
+              <div class="stat-label">Students</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Faculty Members</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Programs</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Placement Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- Research Section -->
+    <section id="research" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Research & Innovation</h2>
+          <p class="lead text-muted mt-4">
+            Advancing Knowledge, Transforming Society
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card research-card">
+              <img
+                src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop"
+                alt="Research"
+                class="research-img"
+              />
+              <div class="card-body">
+                <span class="research-badge">Engineering</span>
+                <h5 class="card-title mt-3">AI & Machine Learning</h5>
+                <p class="card-text text-muted">
+                  Cutting-edge research in artificial intelligence, deep
+                  learning, and neural networks for real-world applications.
+                </p>
+                <a href="#" class="btn btn-warning">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card research-card">
+              <img
+                src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&h=300&fit=crop"
+                alt="Research"
+                class="research-img"
+              />
+              <div class="card-body">
+                <span class="research-badge">Science</span>
+                <h5 class="card-title mt-3">Biotechnology</h5>
+                <p class="card-text text-muted">
+                  Pioneering research in genetic engineering, drug development,
+                  and sustainable bio-solutions.
+                </p>
+                <a href="#" class="btn btn-warning">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card research-card">
+              <img
+                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop"
+                alt="Research"
+                class="research-img"
+              />
+              <div class="card-body">
+                <span class="research-badge">Environment</span>
+                <h5 class="card-title mt-3">Climate Studies</h5>
+                <p class="card-text text-muted">
+                  Research focused on climate change mitigation, renewable
+                  energy, and environmental sustainability.
+                </p>
+                <a href="#" class="btn btn-warning">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-warning btn-lg"
+            >View All Research Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Cell/Misc Section -->
+    <section id="cell" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Cells & Activities</h2>
+          <p class="lead text-muted mt-4">
+            Beyond Academics - Holistic Development
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="cell-item d-flex align-items-center">
+              <i class="fas fa-briefcase cell-icon"></i>
+              <div>
+                <h5 class="mb-2">Training & Placement Cell</h5>
+                <p class="mb-0 text-muted">
+                  Dedicated to ensuring excellent career opportunities for our
+                  students with top recruiters worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cell-item d-flex align-items-center">
+              <i class="fas fa-rocket cell-icon"></i>
+              <div>
+                <h5 class="mb-2">Entrepreneurship Cell</h5>
+                <p class="mb-0 text-muted">
+                  Fostering innovation and startup culture through mentorship,
+                  funding support, and incubation facilities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cell-item d-flex align-items-center">
+              <i class="fas fa-users cell-icon"></i>
+              <div>
+                <h5 class="mb-2">Alumni Cell</h5>
+                <p class="mb-0 text-muted">
+                  Maintaining strong connections with our alumni network across
+                  the globe for mentorship and collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cell-item d-flex align-items-center">
+              <i class="fas fa-basketball-ball cell-icon"></i>
+              <div>
+                <h5 class="mb-2">Sports & Cultural Cell</h5>
+                <p class="mb-0 text-muted">
+                  Promoting physical fitness, sports excellence, and cultural
+                  activities for overall personality development.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cell-item d-flex align-items-center">
+              <i class="fas fa-hands-helping cell-icon"></i>
+              <div>
+                <h5 class="mb-2">NSS & Social Outreach</h5>
+                <p class="mb-0 text-muted">
+                  Encouraging community service, social responsibility, and
+                  sustainable development initiatives.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cell-item d-flex align-items-center">
+              <i class="fas fa-laptop-code cell-icon"></i>
+              <div>
+                <h5 class="mb-2">Technical Clubs</h5>
+                <p class="mb-0 text-muted">
+                  Various technical clubs for robotics, coding, electronics, and
+                  innovation challenges.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-section">
+      <div class="container">
+        <!-- University Info -->
+        <div class="footer-logo-section">
+          <img
+            src="images/gvit.png"
+            alt="GVIT Logo"
+            class="footer-logo"
+          />
+          <h3 class="footer-university-name">GVIT</h3>
+          <p class="footer-address">
+            GVIT, Jyoti Vihar, Burla,<br />
+            Sambalpur, Odisha- 768019
+          </p>
+          <div>
+            <a href="mailto:registrar@gvit.ac.in" class="footer-email-btn"
+              >registrar@gvit.ac.in</a
+            >
+            <a href="mailto:vc@gvit.ac.in" class="footer-email-btn"
+              >vc@gvit.ac.in</a
+            >
+          </div>
+          <div class="footer-social-icons">
+            <a href="#" class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="row mt-5">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4 class="footer-heading">
+              <i class="fas fa-link"></i> Quick Links
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Govt. Links</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Career Counseling and
+                  Placement Cell</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Wifi Registration</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> RTI</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> CIF</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Press Note - ORC 2023</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Current Events</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Video Gallery</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Faculty Login</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4 class="footer-heading">
+              <i class="fas fa-list"></i> Social Updates
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Advertisement & Forms</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Foreign Students
+                  Admission Cell</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Nearby Places to
+                  Visit</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Index Page</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Download e-Office
+                  excels</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Grievance</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Photo Gallery</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Feedback</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Contacts</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12 mb-4">
+            <h4 class="footer-heading">
+              <i class="fab fa-linkedin"></i> Social Updates
+            </h4>
+            <div class="linkedin-widget">
+              <iframe
+                src="https://www.linkedin.com/company/gvitechnoloy/"
+                width="100%"
+                height="400"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p>Copyright © 2026 GVIT, All Rights Reserved.</p>
+          <p>Powered by <a href="#">GVIT Technologies</a></p>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
