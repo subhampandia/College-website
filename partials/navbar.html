@@ -25,128 +25,158 @@
       </div>
     </section>
      <section class="bg-warning d-flex align-items-center">
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-custom bg-warning">
+  <div class="container-fluid">
 
-      <!-- TOGGLER -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- TOGGLER -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- COLLAPSIBLE MENU -->
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav me-auto align-items-center">
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-center">
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-house"></i>
-            </a>
-          </li>
+        <!-- HOME ICON -->
+        <li class="nav-item">
+          <a class="nav-link" href="" data-home="home">
+            <i class="fas fa-house"></i>
+          </a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About us</a>
-          </li>
+        <!-- HOME SECTIONS -->
+        <li class="nav-item">
+          <a class="nav-link" href="" data-home="about">About Us</a>
+        </li>
 
-          <!-- Academics -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Academics
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Courses</a></li>
-              <li><a class="dropdown-item" href="#">Departments</a></li>
-              <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
-              <li><a class="dropdown-item" href="#">Syllabus</a></li>
-            </ul>
-          </li>
+        <!-- ACADEMICS -->
+        <li class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Academics
+  </a>
 
-          <!-- Admission -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Admission
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">UG</a></li>
-              <li><a class="dropdown-item" href="#">PG</a></li>
-              <li><a class="dropdown-item" href="#">PhD</a></li>
-              <li><a class="dropdown-item" href="#">Admission Notice</a></li>
-            </ul>
-          </li>
+  <ul class="dropdown-menu">
+    <li>
+      <a class="dropdown-item" href="/college_website/academics/courses.html">
+        Courses
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="/college_website/academics/departments.html">
+        Departments
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="/college_website/academics/academic-calendar.html">
+        Academic Calendar
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="/college_website/academics/syllabus.html">
+        Syllabus
+      </a>
+    </li>
+  </ul>
+</li>
 
-          <!-- Facility -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Facility
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Library</a></li>
-              <li><a class="dropdown-item" href="#">Hostel</a></li>
-              <li><a class="dropdown-item" href="#">Laboratories</a></li>
-              <li><a class="dropdown-item" href="#">Sports</a></li>
-            </ul>
-          </li>
 
-          <!-- Colleges -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Colleges
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Engineering</a></li>
-              <li><a class="dropdown-item" href="#">Science</a></li>
-              <li><a class="dropdown-item" href="#">Arts</a></li>
-              <li><a class="dropdown-item" href="#">Commerece</a></li>
-              <li><a class="dropdown-item" href="#">Nursing</a></li>
-              <li><a class="dropdown-item" href="#">Law</a></li>
-              <li><a class="dropdown-item" href="#">Management</a></li>
-            </ul>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="#placement">Placements</a>
-          </li>
-          
+        <!-- ADMISSION -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            Admission
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="admission/ug.html">UG</a></li>
+            <li><a class="dropdown-item" href="admission/pg.html">PG</a></li>
+            <li><a class="dropdown-item" href="admission/phd.html">PhD</a></li>
+            <li><a class="dropdown-item" href="admission/notice.html">Admission Notice</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            Colleges
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="admission/ug.html">UG</a></li>
+            <li><a class="dropdown-item" href="admission/pg.html">PG</a></li>
+            <li><a class="dropdown-item" href="admission/phd.html">PhD</a></li>
+            <li><a class="dropdown-item" href="admission/notice.html">Admission Notice</a></li>
+          </ul>
+        </li>
+        <!-- FACILITIES -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            Facilities
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="facilities/library.html">Library</a></li>
+            <li><a class="dropdown-item" href="facilities/hostel.html">Hostel</a></li>
+            <li><a class="dropdown-item" href="facilities/labs.html">Laboratories</a></li>
+            <li><a class="dropdown-item" href="facilities/sports.html">Sports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-home="placement">Placements</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#research">Research</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-home="research">Research</a>
+        </li>
 
-          <!-- Accreditation -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Accreditation
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">IQAC</a></li>
-              <li><a class="dropdown-item" href="#">NAAC</a></li>
-              <li><a class="dropdown-item" href="#">NIRF</a></li>
-            </ul>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-home="campus">Life at Campus</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#cell">Cell/Misc</a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#campus">Life at Campus</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#login">Login</a>
-          </li>
+        <!-- CELLS / MISC -->
+        <li class="nav-item">
+          <a class="nav-link" href="" data-home="cell">Cell / Misc</a>
+        </li>
 
-        </ul>
-      </div>
+        <!-- LOGIN -->
+        <li class="nav-item">
+          <a class="nav-link btn btn-dark text-white px-3 ms-lg-2" href="login.html">
+            Login
+          </a>
+        </li>
+
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
 </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-  </body>
+<script src="partials.js"></script>  
+</body>
 </html>

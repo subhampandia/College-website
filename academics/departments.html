@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - Academic Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        .dept-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #667eea;
+            height: 100%;
+        }
+        .dept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-left-color: #f5576c;
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+   <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Academic Departments</h1>
+            <p class="lead">Discover our diverse range of academic departments and faculties</p>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-3">Our Departments</h2>
+                    <p class="text-muted">Each department is dedicated to excellence in education, research, and innovation. Explore our faculties and find the right fit for your academic journey.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Department 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card dept-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary">
+                                💻
+                            </div>
+                            <h5 class="card-title">Computer Science & IT</h5>
+                            <p class="card-text text-muted">Leading programs in software development, artificial intelligence, cybersecurity, and data science.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-1">15 Faculty</span>
+                                <span class="badge bg-light text-dark">8 Programs</span>
+                            </div>
+                            <p class="mb-2"><strong>Department Head:</strong> Dr. Sarah Johnson</p>
+                            <p class="mb-3"><strong>Contact:</strong> cs@university.edu</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card dept-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-success bg-opacity-10 text-success">
+                                💼
+                            </div>
+                            <h5 class="card-title">Business Administration</h5>
+                            <p class="card-text text-muted">Comprehensive business programs covering management, finance, marketing, and entrepreneurship.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-1">20 Faculty</span>
+                                <span class="badge bg-light text-dark">12 Programs</span>
+                            </div>
+                            <p class="mb-2"><strong>Department Head:</strong> Dr. Michael Chen</p>
+                            <p class="mb-3"><strong>Contact:</strong> business@university.edu</p>
+                            <a href="#" class="btn btn-outline-success">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card dept-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-danger bg-opacity-10 text-danger">
+                                ⚙️
+                            </div>
+                            <h5 class="card-title">Engineering</h5>
+                            <p class="card-text text-muted">World-class engineering education in civil, mechanical, electrical, and chemical engineering.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-1">25 Faculty</span>
+                                <span class="badge bg-light text-dark">10 Programs</span>
+                            </div>
+                            <p class="mb-2"><strong>Department Head:</strong> Dr. Robert Martinez</p>
+                            <p class="mb-3"><strong>Contact:</strong> engineering@university.edu</p>
+                            <a href="#" class="btn btn-outline-danger">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card dept-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-warning bg-opacity-10 text-warning">
+                                📚
+                            </div>
+                            <h5 class="card-title">Liberal Arts</h5>
+                            <p class="card-text text-muted">Explore humanities, literature, philosophy, history, and cultural studies in our diverse programs.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-1">18 Faculty</span>
+                                <span class="badge bg-light text-dark">14 Programs</span>
+                            </div>
+                            <p class="mb-2"><strong>Department Head:</strong> Dr. Emily Thompson</p>
+                            <p class="mb-3"><strong>Contact:</strong> liberalarts@university.edu</p>
+                            <a href="#" class="btn btn-outline-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card dept-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-info bg-opacity-10 text-info">
+                                🔬
+                            </div>
+                            <h5 class="card-title">Natural Sciences</h5>
+                            <p class="card-text text-muted">Cutting-edge research and education in physics, chemistry, biology, and environmental science.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-1">22 Faculty</span>
+                                <span class="badge bg-light text-dark">9 Programs</span>
+                            </div>
+                            <p class="mb-2"><strong>Department Head:</strong> Dr. James Wilson</p>
+                            <p class="mb-3"><strong>Contact:</strong> science@university.edu</p>
+                            <a href="#" class="btn btn-outline-info">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card dept-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-secondary bg-opacity-10 text-secondary">
+                                🎨
+                            </div>
+                            <h5 class="card-title">Fine Arts</h5>
+                            <p class="card-text text-muted">Creative programs in visual arts, music, theater, dance, and digital media production.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-1">12 Faculty</span>
+                                <span class="badge bg-light text-dark">7 Programs</span>
+                            </div>
+                            <p class="mb-2"><strong>Department Head:</strong> Dr. Maria Rodriguez</p>
+                            <p class="mb-3"><strong>Contact:</strong> arts@university.edu</p>
+                            <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
