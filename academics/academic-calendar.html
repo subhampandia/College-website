@@ -44,6 +44,111 @@
         .semester-content {
   transition: opacity 0.3s ease;
 }
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* Day Card */
+.calendar-day {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 10px;
+  min-height: 110px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover Effect */
+.calendar-day:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Date Number */
+.calendar-day span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #212529;
+}
+
+/* Event text */
+.event-title {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #495057;
+}
+/* Sunday */
+.sunday {
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border-left: 4px solid #ffc107;
+}
+
+/* Holidays / Festivals */
+.holiday {
+  background: linear-gradient(135deg, #fdecea, #f8d7da);
+  border-left: 4px solid #dc3545;
+}
+
+/* Vacations */
+.vacation {
+  background: linear-gradient(135deg, #e6f4ea, #d1e7dd);
+  border-left: 4px solid #198754;
+}
+
+/* Exams */
+.exam {
+  background: linear-gradient(135deg, #e7f1ff, #cfe2ff);
+  border-left: 4px solid #0d6efd;
+}
+/* Today */
+.today {
+  outline: 3px solid #0d6efd;
+  outline-offset: -3px;
+}
+
+/* Upcoming */
+.upcoming {
+  border: 2px dashed #198754;
+}
+.calendar-day::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.holiday::after { background: #dc3545; }
+.vacation::after { background: #198754; }
+.exam::after { background: #0d6efd; }
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     </style>
 </head>
@@ -71,6 +176,15 @@
     Even Semester 2026
   </button>
 </div>
+
+<!-- Event Legend -->
+<div class="d-flex justify-content-center gap-3 flex-wrap my-4">
+  <span class="badge bg-primary px-3 py-2">Academic</span>
+  <span class="badge bg-danger px-3 py-2">Examination</span>
+  <span class="badge bg-warning text-dark px-3 py-2">Holiday</span>
+  <span class="badge bg-success px-3 py-2">Administrative</span>
+</div>
+
 <div id="odd-semester" class="semester-content">
   <!-- 🔽 YOUR EXISTING ODD SEMESTER HTML GOES HERE -->
    
@@ -332,7 +446,58 @@
   </div>
 </div>
 </div>
+<div class="alert alert-warning text-center">
+  ⚠ Dates mentioned are tentative and subject to change as per university notification.
+</div>
 
+<!-- Academic Calendar (Monthly View) -->
+<section class="py-5">
+  <div class="container">
+    
+    <h2 class="text-center mb-4 text-primary">Academic Calendar (Live)</h2>
+    <!-- Month Selector -->
+
+<div class="d-flex justify-content-center mb-4">
+  <select id="monthSelector" class="form-select w-auto">
+    <option value="0">January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7" selected>August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+  </select>
+</div>
+<div class="calendar-weekdays">
+  <div>Sun</div><div>Mon</div><div>Tue</div>
+  <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+</div>
+
+
+    <div class="calendar-grid" id="academicCalendar"></div>
+
+    <!-- Legend -->
+    <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+      <span class="badge bg-danger">Holiday / Festival</span>
+      <span class="badge bg-warning text-dark">Sunday</span>
+      <span class="badge bg-success">Vacation</span>
+      <span class="badge bg-primary">Semester Exams</span>
+    </div>
+  </div>
+</section>
+
+<div class="text-center my-4">
+  <a href="assets/Academic_Calendar_2025_26.pdf"
+     class="btn btn-outline-success btn-lg"
+     download>
+     📄 Download Academic Calendar (PDF)
+  </a>
+</div>
 
 
     <!-- Important Information -->
@@ -385,6 +550,12 @@
 
   </div>
 </section>
+<div class="text-center mb-4">
+  <button onclick="window.print()" class="btn btn-outline-dark">
+    🖨 Print Calendar
+  </button>
+</div>
+
 
 <div id="footer"></div>
 
@@ -413,7 +584,106 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 </script>
+<script>
+/* ============ ADMIN CONTROLLABLE EVENTS ============ */
+
+const academicEvents = [
+  { date: "2026-01-26", title: "Republic Day", type: "holiday" },
+  { date: "2026-03-25", title: "Holi", type: "holiday" },
+  { date: "2026-08-15", title: "Independence Day", type: "holiday" },
+  { date: "2026-10-02", title: "Gandhi Jayanti", type: "holiday" },
+
+  { start: "2026-05-10", end: "2026-06-20", title: "Summer Vacation", type: "vacation" },
+  { start: "2026-10-11", end: "2026-10-18", title: "Puja Vacation", type: "vacation" },
+  { start: "2026-12-24", end: "2027-01-02", title: "Winter Vacation", type: "vacation" },
+
+  { start: "2026-04-20", end: "2026-05-05", title: "Even Semester Exams", type: "exam" },
+    { start: "2026-03-05", end: "2026-03-12", title: "Mid Semester Exams", type: "exam" }
+
+];
+
+/* ============ CALENDAR LOGIC ============ */
+
+const calendarEl = document.getElementById("academicCalendar");
+const selector = document.getElementById("monthSelector");
+
+let currentYear = 2026;
+let currentMonth = new Date().getMonth();
+
+selector.value = currentMonth;
+
+selector.addEventListener("change", () => {
+  currentMonth = parseInt(selector.value);
+  renderCalendar();
+});
+  function renderCalendar() {
+  calendarEl.innerHTML = "";
+
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDay.getDay(); i++) {
+    calendarEl.innerHTML += `<div></div>`;
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // 🔁 MAIN DAY LOOP (THIS WAS MISSING)
+  for (let day = 1; day <= lastDay.getDate(); day++) {
+
+    const dateObj = new Date(currentYear, currentMonth, day);
+
+    // ✅ LOCAL DATE STRING (NO UTC, NO SHIFT)
+    const dateStr =
+      dateObj.getFullYear() + "-" +
+      String(dateObj.getMonth() + 1).padStart(2, "0") + "-" +
+      String(dateObj.getDate()).padStart(2, "0");
+
+    let classes = "calendar-day";
+    let eventText = "";
+
+    // Sunday
+    if (dateObj.getDay() === 0) {
+      classes += " sunday";
+      eventText = "Sunday";
+    }
+
+    // Today highlight
+    if (dateObj.getTime() === today.getTime()) {
+      classes += " today";
+    }
+
+    // Event matching (CORRECT)
+    academicEvents.forEach(ev => {
+      // Single-day event
+      if (ev.date === dateStr) {
+        classes += " " + ev.type;
+        eventText = ev.title;
+      }
+
+      // Date-range event
+      if (ev.start && ev.end && dateStr >= ev.start && dateStr <= ev.end) {
+        classes += " " + ev.type;
+        eventText = ev.title;
+      }
+    });
+
+    calendarEl.innerHTML += `
+      <div class="${classes}">
+        <span>${day}</span>
+        <div class="event-title">${eventText}</div>
+      </div>
+    `;
+  }
+}
+renderCalendar();
+
+</script>
+
 
 </body>
 </html>
