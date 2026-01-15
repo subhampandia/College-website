@@ -1,43 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PG Admission</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div id="navbar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PG Admission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* General */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+      }
 
-<section class="bg-success text-white py-5 text-center">
-  <h1>Postgraduate (PG) Admission</h1>
-  <p>Academic Year 2025–26</p>
-</section>
+      h1,
+      h3 {
+        font-weight: 600;
+      }
 
-<div class="container py-5">
-  <h3>Available PG Programs</h3>
-  <ul class="list-group mb-4">
-    <li class="list-group-item">M.Tech</li>
-    <li class="list-group-item">M.Sc</li>
-    <li class="list-group-item">MBA</li>
-    <li class="list-group-item">M.A</li>
-  </ul>
+      /* Hero Section */
+      section.bg-primary {
+        background: linear-gradient(135deg, #0d6efd, #0a58ca);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
 
-  <h3>Eligibility Criteria</h3>
-  <p>Graduation in relevant discipline from a recognized university.</p>
+      /* =========================
+     Seat Table Styling
+     ========================= */
+      /* ===== Striped + Bordered Table ===== */
+      .seat-table {
+        border: 1px solid #dee2e6;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
-  <h3>Selection Criteria</h3>
-  <ul>
-    <li>Entrance Examination</li>
-    <li>Merit-Based Selection</li>
-    <li>Personal Interview (if applicable)</li>
-  </ul>
+      .seat-table thead {
+        background-color: #003b6f;
+        color: #ffffff;
+      }
 
-  <a href="#" class="btn btn-primary mt-3">Apply for PG</a>
-</div>
+      .seat-table th,
+      .seat-table td {
+        border: 1px solid #dee2e6 !important;
+        padding: 12px 14px;
+        vertical-align: middle;
+      }
 
-<div id="footer"></div>
+      .seat-table tbody tr:nth-child(even) {
+        background-color: #f5f5f5;
+      }
+
+      .seat-table tbody tr:hover {
+        background-color: #e9f2ff;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      /* Center numeric columns */
+      .seat-table th:nth-child(2),
+      .seat-table th:nth-child(3),
+      .seat-table th:nth-child(4),
+      .seat-table td:nth-child(2),
+      .seat-table td:nth-child(3),
+      .seat-table td:nth-child(4) {
+        text-align: center;
+        font-weight: 500;
+      }
+
+      /* =========================
+     Section Headings
+     ========================= */
+      h3 {
+        color: #003b6f;
+      }
+
+      /* =========================
+     Eligibility Section
+     ========================= */
+      .eligibility-section {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .eligibility-section h3 {
+        color: #0d6efd;
+        margin-top: 20px;
+      }
+
+      .eligibility-section ol {
+        padding-left: 20px;
+      }
+
+      .eligibility-section ol li {
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      /* =========================
+     Apply Button
+     ========================= */
+      .btn-success {
+        font-size: 18px;
+        padding: 10px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(25, 135, 84, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .btn-success:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(25, 135, 84, 0.6);
+      }
+
+      /* =========================
+     Responsive
+     ========================= */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 26px;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+
+        table {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <section class="bg-primary text-white py-5 text-center">
+      <h1>Postgraduate (PG) Admission</h1>
+      <p>Academic Year 2025–26</p>
+    </section>
+
+    <div class="container py-5">
+      <h3 class="mb-4 text-center">PG Programs – Seat Status</h3>
+
+      <div class="table-responsive">
+        <caption class="text-start mb-3 fw-semibold p-2">
+          Seat availability as on current admission cycle
+        </caption>
+
+        <table class="table seat-table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>COURSE</th>
+              <th>STRENGTH</th>
+              <th>ADMISSION</th>
+              <th>VACANCY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anthropology (Arts)</td>
+              <td>24</td>
+              <td>9</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Anthropology (Science)</td>
+              <td>8</td>
+              <td>4</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Applied Chemistry</td>
+              <td>10</td>
+              <td>10</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+            <tr>
+              <td>Applied Geology</td>
+              <td>20</td>
+              <td>20</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+            <tr>
+              <td>Bio Informatics</td>
+              <td>32</td>
+              <td>15</td>
+              <td class="text-success fw-bold">17</td>
+            </tr>
+            <tr>
+              <td>Biotechnology</td>
+              <td>40</td>
+              <td>39</td>
+              <td class="text-warning fw-bold">1</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>32</td>
+              <td>32</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+            <tr>
+              <td>Commerce</td>
+              <td>48</td>
+              <td>26</td>
+              <td class="text-success fw-bold">22</td>
+            </tr>
+            <tr>
+              <td>Economics</td>
+              <td>50</td>
+              <td>44</td>
+              <td class="text-warning fw-bold">6</td>
+            </tr>
+            <tr>
+              <td>Education</td>
+              <td>40</td>
+              <td>40</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>32</td>
+              <td>30</td>
+              <td class="text-warning fw-bold">2</td>
+            </tr>
+            <tr>
+              <td>Environmental Science</td>
+              <td>24</td>
+              <td>22</td>
+              <td class="text-warning fw-bold">2</td>
+            </tr>
+            <tr>
+              <td>Hindi</td>
+              <td>24</td>
+              <td>20</td>
+              <td class="text-success fw-bold">4</td>
+            </tr>
+            <tr>
+              <td>History</td>
+              <td>40</td>
+              <td>40</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+            <tr>
+              <td>Home Science</td>
+              <td>32</td>
+              <td>32</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+            <tr>
+              <td>Law (LLM) (HR)</td>
+              <td>32</td>
+              <td>32</td>
+              <td class="text-danger fw-bold">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <section class="container py-5 align-items-center">
+      <div class="eligibility-section">
+        <h3>Eligibility Criteria</h3>
+        <p>
+          Passed Undergraduate from a recognized board with minimum required
+          marks.
+        </p>
+
+        <h3>Admission Process</h3>
+        <ol>
+          <li>Online Application</li>
+          <li>Merit / Entrance Test</li>
+          <li>Document Verification</li>
+          <li>Fee Payment</li>
+        </ol>
+        <a
+          href="https://pg.samsodisha.gov.in/"
+          class="btn btn-success mt-3 d-flex align-items-center justify-content-center"
+          >Apply Now</a
+        >
+      </div>
+    </section>
+
+    <div id="footer"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../script.js"></script>
-</body>
+  </body>
 </html>
