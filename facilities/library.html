@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library Facility</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #f8f9fa;
+        font-family: Segoe UI, sans-serif;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(135deg, #0d6efd, #0a58ca);
+        color: #fff;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      /* Slider */
+      .slider {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .slides {
+        display: flex;
+        transition: 0.6s;
+      }
+      .slide {
+        min-width: 100%;
+      }
+      .slide img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .btn-slide {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        font-size: 28px;
+        padding: 6px 14px;
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+
+      /* Content */
+      .box {
+        background: #fff;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+    <div class="hero">
+      <h1>Central Library</h1>
+      <p>Knowledge Resource Centre</p>
+    </div>
+
+    <div class="container py-5">
+      <div class="slider" id="slider">
+        <div class="slides">
+          <div class="slide"><img src="images/library1.jpg" /></div>
+          <div class="slide"><img src="images/library2.jpg" /></div>
+          <div class="slide"><img src="images/library3.jpg" /></div>
+        </div>
+        <button class="btn-slide prev" onclick="move(-1)">❮</button>
+        <button class="btn-slide next" onclick="move(1)">❯</button>
+      </div>
+
+      <div class="box">
+        <h3>Library Facilities</h3>
+        <ul>
+          <li>50,000+ Books</li>
+          <li>E-Journals & Digital Library</li>
+          <li>Reading Hall</li>
+          <li>Wi-Fi Enabled</li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+    <script>
+      let i = 0;
+      function move(n) {
+        const s = document.querySelector(".slides");
+        const t = s.children.length;
+        i = (i + n + t) % t;
+        s.style.transform = `translateX(-${i * 100}%)`;
+      }
+      setInterval(() => move(1), 4000);
+    </script>
+  </body>
+</html>
