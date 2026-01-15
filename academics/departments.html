@@ -1,185 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departments - Academic Portal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 80px 0;
-        }
-        .dept-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 4px solid #667eea;
-            height: 100%;
-        }
-        .dept-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            border-left-color: #f5576c;
-        }
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Departments - Academic Portal</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #ff9933 0%, #071acc 100%);
+      color: white;
+      padding: 90px 0;
+    }
+
+    .dept-card {
+      transition: all 0.3s ease;
+      border-left: 5px solid #ff9933;
+      height: 100%;
+    }
+
+    .dept-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      border-left-color: #138808;
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
+
 <body>
-   <div id="navbar"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Academic Departments</h1>
-            <p class="lead">Discover our diverse range of academic departments and faculties</p>
-        </div>
-    </section>
+<div id="navbar"></div>
 
-    <!-- Departments Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="mb-3">Our Departments</h2>
-                    <p class="text-muted">Each department is dedicated to excellence in education, research, and innovation. Explore our faculties and find the right fit for your academic journey.</p>
-                </div>
+<!-- Hero Section -->
+<section class="hero-section text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">Academic Departments</h1>
+    <p class="lead">
+      NAAC Accredited | AICTE & UGC Approved | Excellence in Education
+    </p>
+  </div>
+</section>
+
+<!-- Departments Section -->
+<section class="py-5">
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col-lg-9 mx-auto text-center">
+        <h2 class="fw-bold mb-3">Our Academic Departments</h2>
+        <p class="text-muted">
+          Each department is committed to quality education, research, and industry-oriented learning
+          aligned with the Indian higher education framework.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Computer Science -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card">
+          <div class="card-body">
+            <div class="icon-box bg-primary bg-opacity-10 text-primary">💻</div>
+            <h5 class="card-title">Computer Science & Engineering</h5>
+            <p class="text-muted">
+              Focused on software development, AI, ML, cloud computing, and cybersecurity.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark me-1">18 Faculty</span>
+              <span class="badge bg-light text-dark">B.Tech / M.Tech</span>
             </div>
-
-            <div class="row g-4">
-                <!-- Department 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card dept-card">
-                        <div class="card-body">
-                            <div class="icon-box bg-primary bg-opacity-10 text-primary">
-                                💻
-                            </div>
-                            <h5 class="card-title">Computer Science & IT</h5>
-                            <p class="card-text text-muted">Leading programs in software development, artificial intelligence, cybersecurity, and data science.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-light text-dark me-1">15 Faculty</span>
-                                <span class="badge bg-light text-dark">8 Programs</span>
-                            </div>
-                            <p class="mb-2"><strong>Department Head:</strong> Dr. Sarah Johnson</p>
-                            <p class="mb-3"><strong>Contact:</strong> cs@university.edu</p>
-                            <a href="#" class="btn btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Department 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card dept-card">
-                        <div class="card-body">
-                            <div class="icon-box bg-success bg-opacity-10 text-success">
-                                💼
-                            </div>
-                            <h5 class="card-title">Business Administration</h5>
-                            <p class="card-text text-muted">Comprehensive business programs covering management, finance, marketing, and entrepreneurship.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-light text-dark me-1">20 Faculty</span>
-                                <span class="badge bg-light text-dark">12 Programs</span>
-                            </div>
-                            <p class="mb-2"><strong>Department Head:</strong> Dr. Michael Chen</p>
-                            <p class="mb-3"><strong>Contact:</strong> business@university.edu</p>
-                            <a href="#" class="btn btn-outline-success">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Department 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card dept-card">
-                        <div class="card-body">
-                            <div class="icon-box bg-danger bg-opacity-10 text-danger">
-                                ⚙️
-                            </div>
-                            <h5 class="card-title">Engineering</h5>
-                            <p class="card-text text-muted">World-class engineering education in civil, mechanical, electrical, and chemical engineering.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-light text-dark me-1">25 Faculty</span>
-                                <span class="badge bg-light text-dark">10 Programs</span>
-                            </div>
-                            <p class="mb-2"><strong>Department Head:</strong> Dr. Robert Martinez</p>
-                            <p class="mb-3"><strong>Contact:</strong> engineering@university.edu</p>
-                            <a href="#" class="btn btn-outline-danger">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Department 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card dept-card">
-                        <div class="card-body">
-                            <div class="icon-box bg-warning bg-opacity-10 text-warning">
-                                📚
-                            </div>
-                            <h5 class="card-title">Liberal Arts</h5>
-                            <p class="card-text text-muted">Explore humanities, literature, philosophy, history, and cultural studies in our diverse programs.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-light text-dark me-1">18 Faculty</span>
-                                <span class="badge bg-light text-dark">14 Programs</span>
-                            </div>
-                            <p class="mb-2"><strong>Department Head:</strong> Dr. Emily Thompson</p>
-                            <p class="mb-3"><strong>Contact:</strong> liberalarts@university.edu</p>
-                            <a href="#" class="btn btn-outline-warning">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Department 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card dept-card">
-                        <div class="card-body">
-                            <div class="icon-box bg-info bg-opacity-10 text-info">
-                                🔬
-                            </div>
-                            <h5 class="card-title">Natural Sciences</h5>
-                            <p class="card-text text-muted">Cutting-edge research and education in physics, chemistry, biology, and environmental science.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-light text-dark me-1">22 Faculty</span>
-                                <span class="badge bg-light text-dark">9 Programs</span>
-                            </div>
-                            <p class="mb-2"><strong>Department Head:</strong> Dr. James Wilson</p>
-                            <p class="mb-3"><strong>Contact:</strong> science@university.edu</p>
-                            <a href="#" class="btn btn-outline-info">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Department 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card dept-card">
-                        <div class="card-body">
-                            <div class="icon-box bg-secondary bg-opacity-10 text-secondary">
-                                🎨
-                            </div>
-                            <h5 class="card-title">Fine Arts</h5>
-                            <p class="card-text text-muted">Creative programs in visual arts, music, theater, dance, and digital media production.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-light text-dark me-1">12 Faculty</span>
-                                <span class="badge bg-light text-dark">7 Programs</span>
-                            </div>
-                            <p class="mb-2"><strong>Department Head:</strong> Dr. Maria Rodriguez</p>
-                            <p class="mb-3"><strong>Contact:</strong> arts@university.edu</p>
-                            <a href="#" class="btn btn-outline-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p><strong>HOD:</strong> Dr. Anil Kumar</p>
+            <p><strong>Email:</strong> hodcse@university.ac.in</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">View Department</a>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- Management -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card">
+          <div class="card-body">
+            <div class="icon-box bg-success bg-opacity-10 text-success">📊</div>
+            <h5 class="card-title">Management Studies</h5>
+            <p class="text-muted">
+              MBA programs covering HR, Finance, Marketing, and Entrepreneurship.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark me-1">15 Faculty</span>
+              <span class="badge bg-light text-dark">MBA</span>
+            </div>
+            <p><strong>HOD:</strong> Dr. S. R. Mishra</p>
+            <p><strong>Email:</strong> hodmba@university.ac.in</p>
+            <a href="#" class="btn btn-outline-success btn-sm">View Department</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+  <div class="card dept-card">
+    <div class="card-body">
+      <div class="icon-box bg-warning bg-opacity-10 text-warning">📖</div>
+      <h5 class="card-title">Department of English</h5>
+      <p class="text-muted">
+        Literature, linguistics, Indian writing in English, and cultural studies.
+      </p>
+      <div class="mb-3">
+        <span class="badge bg-light text-dark me-1">12 Faculty</span>
+        <span class="badge bg-light text-dark">UG / PG / PhD</span>
+      </div>
+      <p><strong>HOD:</strong> Prof. Sushanta Kumar Das</p>
+      <p><strong>Email:</strong> english@university.ac.in</p>
+      <a href="#" class="btn btn-outline-warning btn-sm">View Department</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-lg-4">
+  <div class="card dept-card">
+    <div class="card-body">
+      <div class="icon-box bg-success bg-opacity-10 text-success">📊</div>
+      <h5 class="card-title">Department of Commerce</h5>
+      <p class="text-muted">
+        Accounting, finance, taxation, corporate law, and business economics.
+      </p>
+      <div class="mb-3">
+        <span class="badge bg-light text-dark me-1">14 Faculty</span>
+        <span class="badge bg-light text-dark">B.Com / M.Com</span>
+      </div>
+      <p><strong>HOD:</strong> Prof. R. N. Mohanty</p>
+      <p><strong>Email:</strong> commerce@university.ac.in</p>
+      <a href="#" class="btn btn-outline-success btn-sm">View Department</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-lg-4">
+  <div class="card dept-card">
+    <div class="card-body">
+      <div class="icon-box bg-info bg-opacity-10 text-info">📐</div>
+      <h5 class="card-title">Department of Mathematics</h5>
+      <p class="text-muted">
+        Pure and applied mathematics, statistics, and computational methods.
+      </p>
+      <div class="mb-3">
+        <span class="badge bg-light text-dark me-1">10 Faculty</span>
+        <span class="badge bg-light text-dark">UG / PG / PhD</span>
+      </div>
+      <p><strong>HOD:</strong> Prof. B. K. Nayak</p>
+      <p><strong>Email:</strong> mathematics@university.ac.in</p>
+      <a href="#" class="btn btn-outline-info btn-sm">View Department</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-lg-4">
+  <div class="card dept-card">
+    <div class="card-body">
+      <div class="icon-box bg-danger bg-opacity-10 text-danger">⚖️</div>
+      <h5 class="card-title">Department of Law</h5>
+      <p class="text-muted">
+        Constitutional law, criminal law, corporate law, and human rights.
+      </p>
+      <div class="mb-3">
+        <span class="badge bg-light text-dark me-1">16 Faculty</span>
+        <span class="badge bg-light text-dark">LLB / LLM</span>
+      </div>
+      <p><strong>HOD:</strong> Prof. S. K. Panda</p>
+      <p><strong>Email:</strong> law@university.ac.in</p>
+      <a href="#" class="btn btn-outline-danger btn-sm">View Department</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-lg-4">
+  <div class="card dept-card">
+    <div class="card-body">
+      <div class="icon-box bg-secondary bg-opacity-10 text-secondary">🌍</div>
+      <h5 class="card-title">Department of History</h5>
+      <p class="text-muted">
+        Ancient, medieval, modern Indian history and Odisha heritage studies.
+      </p>
+      <div class="mb-3">
+        <span class="badge bg-light text-dark me-1">11 Faculty</span>
+        <span class="badge bg-light text-dark">UG / PG</span>
+      </div>
+      <p><strong>HOD:</strong> Prof. P. K. Mishra</p>
+      <p><strong>Email:</strong> history@university.ac.in</p>
+      <a href="#" class="btn btn-outline-secondary btn-sm">View Department</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-lg-4">
+  <div class="card dept-card">
+    <div class="card-body">
+      <div class="icon-box bg-primary bg-opacity-10 text-primary">🎓</div>
+      <h5 class="card-title">Department of Education</h5>
+      <p class="text-muted">
+        Teacher education, pedagogy, curriculum studies, and educational psychology.
+      </p>
+      <div class="mb-3">
+        <span class="badge bg-light text-dark me-1">13 Faculty</span>
+        <span class="badge bg-light text-dark">B.Ed / M.Ed</span>
+      </div>
+      <p><strong>HOD:</strong> Prof. L. N. Sahoo</p>
+      <p><strong>Email:</strong> education@university.ac.in</p>
+      <a href="#" class="btn btn-outline-primary btn-sm">View Department</a>
+    </div>
+  </div>
+</div>
+
+      <!-- Engineering -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card">
+          <div class="card-body">
+            <div class="icon-box bg-danger bg-opacity-10 text-danger">⚙️</div>
+            <h5 class="card-title">Mechanical Engineering</h5>
+            <p class="text-muted">
+              Strong foundation in design, manufacturing, thermal engineering, and robotics.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark me-1">20 Faculty</span>
+              <span class="badge bg-light text-dark">B.Tech</span>
+            </div>
+            <p><strong>HOD:</strong> Dr. P. K. Verma</p>
+            <p><strong>Email:</strong> hodme@university.ac.in</p>
+            <a href="#" class="btn btn-outline-danger btn-sm">View Department</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Humanities -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card">
+          <div class="card-body">
+            <div class="icon-box bg-warning bg-opacity-10 text-warning">📚</div>
+            <h5 class="card-title">Humanities & Social Sciences</h5>
+            <p class="text-muted">
+              Courses in English, Economics, Sociology, and Indian Culture & Ethics.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark me-1">14 Faculty</span>
+              <span class="badge bg-light text-dark">UG / PG</span>
+            </div>
+            <p><strong>HOD:</strong> Dr. Meera Nair</p>
+            <p><strong>Email:</strong> hodhss@university.ac.in</p>
+            <a href="#" class="btn btn-outline-warning btn-sm">View Department</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sciences -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card">
+          <div class="card-body">
+            <div class="icon-box bg-info bg-opacity-10 text-info">🔬</div>
+            <h5 class="card-title">Basic Sciences</h5>
+            <p class="text-muted">
+              Physics, Chemistry, Mathematics & Environmental Science with research focus.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark me-1">16 Faculty</span>
+              <span class="badge bg-light text-dark">B.Sc / M.Sc</span>
+            </div>
+            <p><strong>HOD:</strong> Dr. R. K. Das</p>
+            <p><strong>Email:</strong> hodscience@university.ac.in</p>
+            <a href="#" class="btn btn-outline-info btn-sm">View Department</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arts -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card">
+          <div class="card-body">
+            <div class="icon-box bg-secondary bg-opacity-10 text-secondary">🎨</div>
+            <h5 class="card-title">Fine Arts & Design</h5>
+            <p class="text-muted">
+              Visual arts, applied arts, animation, and digital media studies.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark me-1">10 Faculty</span>
+              <span class="badge bg-light text-dark">UG</span>
+            </div>
+            <p><strong>HOD:</strong> Prof. Sunita Rao</p>
+            <p><strong>Email:</strong> hodarts@university.ac.in</p>
+            <a href="#" class="btn btn-outline-secondary btn-sm">View Department</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <div id="footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
+
 </body>
 </html>
