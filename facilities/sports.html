@@ -154,6 +154,21 @@
             color: white;
             font-weight: 600;
         }
+        .gallery-img {
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .gallery-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-img:hover img {
+        transform: scale(1.1);
+      }
     </style>
 </head>
 <body>
@@ -202,7 +217,67 @@
                 </div>
             </div>
         </div>
+        <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4 fw-bold">Image Gallery</h2>
 
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/spo1.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/spo2.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/spo3.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/spo4.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/spo5.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/spo6.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
         <!-- Outdoor Sports -->
         <h2 class="section-title text-center mb-5">Outdoor Sports Facilities</h2>
         <div class="row g-4 mb-5">
@@ -245,9 +320,9 @@
             <div class="col-md-4">
                 <div class="sport-card">
                     <div class="card-body text-center p-4">
-                        <div class="sport-icon">🎾</div>
-                        <h5 class="card-title fw-bold">Tennis</h5>
-                        <p class="card-text">Professional tennis courts with synthetic surface and proper maintenance.</p>
+                        <div class="sport-icon">🏑</div>
+                        <h5 class="card-title fw-bold">Hockey</h5>
+                        <p class="card-text">Professional Hockey grounds with grass surface and proper maintenance.</p>
                     </div>
                 </div>
             </div>

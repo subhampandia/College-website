@@ -14,11 +14,36 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffc107;
+  color: #000;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: #ffca2c;
+  transform: translateY(-4px);
+}
+
+    </style>
   </head>
   <body>
     <div id="navbar"></div>
 
-    <section class="hero" id="home">
+    <section class="hero">
       <div id="heroCarousel" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -699,11 +724,16 @@
 
     <!--Footer Section-->
     <div id="footer"></div>
+    <button id="backToTop" class="back-to-top" title="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
+    
   </body>
 </html>

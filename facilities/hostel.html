@@ -142,6 +142,21 @@
             border-radius: 10px;
             border-left: 4px solid var(--secondary-color);
         }
+        .gallery-img {
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .gallery-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-img:hover img {
+        transform: scale(1.1);
+      }
     </style>
 </head>
 <body>
@@ -217,7 +232,67 @@
                 </div>
             </div>
         </div>
+        <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4 fw-bold">Image Gallery</h2>
 
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/hos1.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/hos2.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/hos33.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/hos4.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/hos5.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/hos6.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
         <!-- Room Features -->
         <h2 class="section-title text-center mb-4">Room Amenities</h2>
         <div class="row g-4 mb-5">

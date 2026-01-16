@@ -1,387 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratories - University Facilities</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary-color: #7c3aed;
-            --secondary-color: #a78bfa;
-            --accent-color: #c4b5fd;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg,#7c3aed,#c4b5fd);
-            color: white;
-            padding: 80px 0 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .lab-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            overflow: hidden;
-            background: white;
-        }
-        
-        .lab-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-        
-        .lab-header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: white;
-            padding: 20px;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
-        .lab-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 2rem;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            border-radius: 2px;
-        }
-        
-        .stats-box {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .stats-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            display: block;
-        }
-        
-        .equipment-list {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
-        }
-        
-        .equipment-item {
-            padding: 8px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        .equipment-item:last-child {
-            border-bottom: none;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            padding: 60px 0;
-            border-radius: 20px;
-        }
-        
-        .btn-custom {
-            background: var(--secondary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            border: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-custom:hover {
-            background: var(--primary-color);
-            transform: scale(1.05);
-            color: white;
-        }
-        
-        .feature-badge {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin: 5px;
-        }
+      :root {
+        --primary-color: #7c3aed;
+        --secondary-color: #a78bfa;
+        --accent-color: #c4b5fd;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, #7c3aed, #c4b5fd);
+        color: white;
+        padding: 80px 0 60px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>')
+          no-repeat bottom;
+        background-size: cover;
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .lab-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        overflow: hidden;
+        background: white;
+      }
+
+      .lab-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .lab-header {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--accent-color)
+        );
+        color: white;
+        padding: 20px;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .lab-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--secondary-color),
+          var(--accent-color)
+        );
+        border-radius: 2px;
+      }
+
+      .stats-box {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--accent-color)
+        );
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .stats-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        display: block;
+      }
+
+      .equipment-list {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 0;
+      }
+
+      .equipment-item {
+        padding: 8px 0;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      .equipment-item:last-child {
+        border-bottom: none;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        padding: 60px 0;
+        border-radius: 20px;
+      }
+
+      .btn-custom {
+        background: var(--secondary-color);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        background: var(--primary-color);
+        transform: scale(1.05);
+        color: white;
+      }
+
+      .feature-badge {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        margin: 5px;
+      }
+      .gallery-img {
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .gallery-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-img:hover img {
+        transform: scale(1.1);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="navbar"></div>
     <!-- Hero Section -->
     <div class="hero-section text-center">
-        <div class="container hero-content">
-            <h1 class="display-4 fw-bold mb-3">University Laboratories</h1>
-            <p class="lead">Where Theory Meets Practice</p>
-        </div>
+      <div class="container hero-content">
+        <h1 class="display-4 fw-bold mb-3">University Laboratories</h1>
+        <p class="lead">Where Theory Meets Practice</p>
+      </div>
     </div>
 
     <!-- Main Content -->
     <div class="container my-5">
-        <!-- Introduction -->
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <p class="fs-5 text-muted">Our state-of-the-art laboratories provide hands-on learning experiences equipped with modern instruments and technology. Students gain practical skills essential for their academic and professional development across various disciplines.</p>
-            </div>
+      <!-- Introduction -->
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="fs-5 text-muted">
+            Our state-of-the-art laboratories provide hands-on learning
+            experiences equipped with modern instruments and technology.
+            Students gain practical skills essential for their academic and
+            professional development across various disciplines.
+          </p>
         </div>
+      </div>
 
-        <!-- Statistics -->
-        <div class="row g-4 mb-5">
-            <div class="col-md-3">
-                <div class="stats-box">
-                    <span class="stats-number">25+</span>
-                    <span>Laboratories</span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stats-box">
-                    <span class="stats-number">500+</span>
-                    <span>Experiments</span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stats-box">
-                    <span class="stats-number">1000+</span>
-                    <span>Equipment</span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stats-box">
-                    <span class="stats-number">50+</span>
-                    <span>Lab Assistants</span>
-                </div>
-            </div>
+      <!-- Statistics -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-3">
+          <div class="stats-box">
+            <span class="stats-number">25+</span>
+            <span>Laboratories</span>
+          </div>
         </div>
+        <div class="col-md-3">
+          <div class="stats-box">
+            <span class="stats-number">500+</span>
+            <span>Experiments</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-box">
+            <span class="stats-number">1000+</span>
+            <span>Equipment</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-box">
+            <span class="stats-number">50+</span>
+            <span>Lab Assistants</span>
+          </div>
+        </div>
+      </div>
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4 fw-bold">Image Gallery</h2>
 
-        <!-- Computer Science Labs -->
-        <h2 class="section-title text-center mb-5">Computer Science & IT Labs</h2>
-        <div class="row g-4 mb-5">
-            <div class="col-md-6">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">💻</span> Programming Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p class="mb-3">Equipped with high-performance computers for software development, coding practice, and algorithm implementation.</p>
-                        <div class="equipment-list">
-                            <div class="equipment-item">✓ 60 latest configuration systems</div>
-                            <div class="equipment-item">✓ Multiple IDEs and development tools</div>
-                            <div class="equipment-item">✓ Version control systems</div>
-                            <div class="equipment-item">✓ High-speed internet connectivity</div>
-                        </div>
-                    </div>
-                </div>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/lab1.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
             </div>
-            <div class="col-md-6">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">🌐</span> Network Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p class="mb-3">Dedicated facility for learning networking concepts, protocols, and security implementations.</p>
-                        <div class="equipment-list">
-                            <div class="equipment-item">✓ Cisco routers and switches</div>
-                            <div class="equipment-item">✓ Network simulation software</div>
-                            <div class="equipment-item">✓ Security testing tools</div>
-                            <div class="equipment-item">✓ Wireless networking equipment</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">🤖</span> AI & Machine Learning Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p class="mb-3">Advanced computing facility for artificial intelligence, machine learning, and data science projects.</p>
-                        <div class="equipment-list">
-                            <div class="equipment-item">✓ GPU-enabled workstations</div>
-                            <div class="equipment-item">✓ ML frameworks and libraries</div>
-                            <div class="equipment-item">✓ Big data processing tools</div>
-                            <div class="equipment-item">✓ Cloud computing access</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">📱</span> Mobile App Development Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p class="mb-3">Specialized environment for developing and testing mobile applications across platforms.</p>
-                        <div class="equipment-list">
-                            <div class="equipment-item">✓ Android and iOS development tools</div>
-                            <div class="equipment-item">✓ Testing devices and emulators</div>
-                            <div class="equipment-item">✓ Cross-platform frameworks</div>
-                            <div class="equipment-item">✓ App deployment infrastructure</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Engineering Labs -->
-        <h2 class="section-title text-center mb-5">Engineering Laboratories</h2>
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">⚡</span> Electronics Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p>Digital and analog circuit design, testing equipment, oscilloscopes, function generators, and breadboards.</p>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/lab2.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
             </div>
-            <div class="col-md-4">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">⚙️</span> Mechanical Workshop
-                    </div>
-                    <div class="card-body p-4">
-                        <p>CNC machines, lathe machines, drilling equipment, welding setup, and 3D printing facilities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">🔌</span> Electrical Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p>Power systems, electrical machines, transformers, motor control equipment, and measurement instruments.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Science Labs -->
-        <h2 class="section-title text-center mb-5">Science Laboratories</h2>
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">🧪</span> Chemistry Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p>Equipped with analytical instruments, reagents, glassware, fume hoods, and safety equipment for experiments.</p>
-                        <div class="mt-3">
-                            <span class="feature-badge">Organic</span>
-                            <span class="feature-badge">Inorganic</span>
-                            <span class="feature-badge">Physical</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/lab3.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
             </div>
-            <div class="col-md-4">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">🔬</span> Physics Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p>Modern apparatus for mechanics, optics, electricity, magnetism, and advanced physics experiments.</p>
-                        <div class="mt-3">
-                            <span class="feature-badge">Optics</span>
-                            <span class="feature-badge">Mechanics</span>
-                            <span class="feature-badge">Electronics</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-icon">🦠</span> Biology Lab
-                    </div>
-                    <div class="card-body p-4">
-                        <p>Microscopes, specimens, models, dissection tools, and microbiology equipment for life sciences.</p>
-                        <div class="mt-3">
-                            <span class="feature-badge">Botany</span>
-                            <span class="feature-badge">Zoology</span>
-                            <span class="feature-badge">Microbiology</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Safety & Guidelines -->
-        <h2 class="section-title text-center mb-4">Laboratory Safety</h2>
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto">
-                <div class="card">
-                    <div class="card-body p-4">
-                        <p class="mb-3">Safety is our top priority. All laboratories follow strict safety protocols:</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">✓ Mandatory safety training for all students</li>
-                            <li class="mb-2">✓ Personal protective equipment (PPE) provided</li>
-                            <li class="mb-2">✓ Fire safety equipment and emergency exits</li>
-                            <li class="mb-2">✓ First aid kits and trained lab assistants</li>
-                            <li class="mb-2">✓ Proper waste disposal systems</li>
-                            <li class="mb-2">✓ Regular equipment maintenance and calibration</li>
-                            <li class="mb-2">✓ Safety signs and operating procedures displayed</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/lab4.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
             </div>
-        </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section text-center p-5">
-            <h3 class="mb-3">Want to Explore Our Labs?</h3>
-            <p class="mb-4">Schedule a visit to see our state-of-the-art facilities and learn more about hands-on learning opportunities.</p>
-            <button class="btn btn-custom">Schedule Lab Tour</button>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/lab5.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-img">
+                <img
+                  src="/college_website/images/lab6.jpg"
+                  alt="Gallery Image"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+      <!-- Computer Science Labs -->
+      <h2 class="section-title text-center mb-5">Computer Science & IT Labs</h2>
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">💻</span> Programming Lab
+            </div>
+            <div class="card-body p-4">
+              <p class="mb-3">
+                Equipped with high-performance computers for software
+                development, coding practice, and algorithm implementation.
+              </p>
+              <div class="equipment-list">
+                <div class="equipment-item">
+                  ✓ 60 latest configuration systems
+                </div>
+                <div class="equipment-item">
+                  ✓ Multiple IDEs and development tools
+                </div>
+                <div class="equipment-item">✓ Version control systems</div>
+                <div class="equipment-item">
+                  ✓ High-speed internet connectivity
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">🌐</span> Network Lab
+            </div>
+            <div class="card-body p-4">
+              <p class="mb-3">
+                Dedicated facility for learning networking concepts, protocols,
+                and security implementations.
+              </p>
+              <div class="equipment-list">
+                <div class="equipment-item">✓ Cisco routers and switches</div>
+                <div class="equipment-item">✓ Network simulation software</div>
+                <div class="equipment-item">✓ Security testing tools</div>
+                <div class="equipment-item">
+                  ✓ Wireless networking equipment
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Engineering Labs -->
+      <h2 class="section-title text-center mb-5">Engineering Laboratories</h2>
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">⚡</span> Electronics Lab
+            </div>
+            <div class="card-body p-4">
+              <p>
+                Digital and analog circuit design, testing equipment,
+                oscilloscopes, function generators, and breadboards.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">⚙️</span> Mechanical Workshop
+            </div>
+            <div class="card-body p-4">
+              <p>
+                CNC machines, lathe machines, drilling equipment, welding setup,
+                and 3D printing facilities.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">🔌</span> Electrical Lab
+            </div>
+            <div class="card-body p-4">
+              <p>
+                Power systems, electrical machines, transformers, motor control
+                equipment, and measurement instruments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Science Labs -->
+      <h2 class="section-title text-center mb-5">Science Laboratories</h2>
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">🧪</span> Chemistry Lab
+            </div>
+            <div class="card-body p-4">
+              <p>
+                Equipped with analytical instruments, reagents, glassware, fume
+                hoods, and safety equipment for experiments.
+              </p>
+              <div class="mt-3">
+                <span class="feature-badge">Organic</span>
+                <span class="feature-badge">Inorganic</span>
+                <span class="feature-badge">Physical</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">🔬</span> Physics Lab
+            </div>
+            <div class="card-body p-4">
+              <p>
+                Modern apparatus for mechanics, optics, electricity, magnetism,
+                and advanced physics experiments.
+              </p>
+              <div class="mt-3">
+                <span class="feature-badge">Optics</span>
+                <span class="feature-badge">Mechanics</span>
+                <span class="feature-badge">Electronics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="lab-card">
+            <div class="lab-header">
+              <span class="lab-icon">🦠</span> Biology Lab
+            </div>
+            <div class="card-body p-4">
+              <p>
+                Microscopes, specimens, models, dissection tools, and
+                microbiology equipment for life sciences.
+              </p>
+              <div class="mt-3">
+                <span class="feature-badge">Botany</span>
+                <span class="feature-badge">Zoology</span>
+                <span class="feature-badge">Microbiology</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety & Guidelines -->
+      <h2 class="section-title text-center mb-4">Laboratory Safety</h2>
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+          <div class="card">
+            <div class="card-body p-4">
+              <p class="mb-3">
+                Safety is our top priority. All laboratories follow strict
+                safety protocols:
+              </p>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  ✓ Mandatory safety training for all students
+                </li>
+                <li class="mb-2">
+                  ✓ Personal protective equipment (PPE) provided
+                </li>
+                <li class="mb-2">
+                  ✓ Fire safety equipment and emergency exits
+                </li>
+                <li class="mb-2">
+                  ✓ First aid kits and trained lab assistants
+                </li>
+                <li class="mb-2">✓ Proper waste disposal systems</li>
+                <li class="mb-2">
+                  ✓ Regular equipment maintenance and calibration
+                </li>
+                <li class="mb-2">
+                  ✓ Safety signs and operating procedures displayed
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section text-center p-5">
+        <h3 class="mb-3">Want to Explore Our Labs?</h3>
+        <p class="mb-4">
+          Schedule a visit to see our state-of-the-art facilities and learn more
+          about hands-on learning opportunities.
+        </p>
+        <button class="btn btn-custom">Schedule Lab Tour</button>
+      </div>
     </div>
-<div id="footer"></div>
+    <div id="footer"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../script.js"></script>
-</body>
+  </body>
 </html>

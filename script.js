@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPartial("navbar", "navbar.html");
   loadPartial("footer", "footer.html");
   initMarquee();
+   initBackToTopHome();
 });
 
 /* ================= BASE PATH (SAFE & SIMPLE) ================= */
@@ -53,10 +54,22 @@ function initHomeLinks() {
       const section = link.getAttribute("data-home");
       const base = getBasePath();
 
-      window.location.href = base + "index.html#" + section;
+      // Go to home page WITHOUT keeping old scroll
+      if (!window.location.pathname.endsWith("index.html")) {
+        window.location.replace(base + "index.html#" + section);
+      } else {
+        // Already on index page → scroll to top
+        const target = document.getElementById(section);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
     });
   });
 }
+
 
 /* ================= MARQUEE ================= */
 function initMarquee() {
@@ -93,5 +106,31 @@ function initMarquee() {
     marquee.addEventListener("mouseleave", () => paused = false);
 
     animate();
+  });
+}
+/* ================= BACK TO TOP (HOME ONLY) ================= */
+function initBackToTopHome() {
+  // Run ONLY on index.html or root
+  const isHome =
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("/college_website/");
+
+  if (!isHome) return;
+
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "flex" : "none";
+    btn.style.alignItems = "center";
+    btn.style.justifyContent = "center";
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 }
