@@ -1,117 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Library Facility</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - University Facilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      body {
-        background: #f8f9fa;
-        font-family: Segoe UI, sans-serif;
-      }
-
-      /* Hero */
-      .hero {
-        background: linear-gradient(135deg, #0d6efd, #0a58ca);
-        color: #fff;
-        padding: 50px 0;
-        text-align: center;
-      }
-
-      /* Slider */
-      .slider {
-        position: relative;
-        height: 400px;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-      .slides {
-        display: flex;
-        transition: 0.6s;
-      }
-      .slide {
-        min-width: 100%;
-      }
-      .slide img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-      }
-
-      .btn-slide {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: none;
-        font-size: 28px;
-        padding: 6px 14px;
-      }
-      .prev {
-        left: 10px;
-      }
-      .next {
-        right: 10px;
-      }
-
-      /* Content */
-      .box {
-        background: #fff;
-        padding: 30px;
-        margin-top: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg,#1e3a8a,#60a5fa);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .stats-box {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .timing-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timing-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            padding: 60px 0;
+            border-radius: 20px;
+        }
+        
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+            color: white;
+        }
     </style>
-  </head>
-
-  <body>
+</head>
+<body>
     <div id="navbar"></div>
-    <div class="hero">
-      <h1>Central Library</h1>
-      <p>Knowledge Resource Centre</p>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <div class="container hero-content">
+            <h1 class="display-4 fw-bold mb-3">University Library</h1>
+            <p class="lead">A Gateway to Knowledge and Academic Excellence</p>
+        </div>
     </div>
 
-    <div class="container py-5">
-      <div class="slider" id="slider">
-        <div class="slides">
-          <div class="slide"><img src="images/library1.jpg" /></div>
-          <div class="slide"><img src="images/library2.jpg" /></div>
-          <div class="slide"><img src="images/library3.jpg" /></div>
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Introduction -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="fs-5 text-muted">Our state-of-the-art library serves as the intellectual heart of the university, providing students and faculty with access to vast collections, modern technology, and comfortable study spaces designed to foster learning and research.</p>
+            </div>
         </div>
-        <button class="btn-slide prev" onclick="move(-1)">❮</button>
-        <button class="btn-slide next" onclick="move(1)">❯</button>
-      </div>
 
-      <div class="box">
-        <h3>Library Facilities</h3>
-        <ul>
-          <li>50,000+ Books</li>
-          <li>E-Journals & Digital Library</li>
-          <li>Reading Hall</li>
-          <li>Wi-Fi Enabled</li>
-        </ul>
-      </div>
+        <!-- Statistics -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="stats-box">
+                    <span class="stats-number">150K+</span>
+                    <span>Books</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-box">
+                    <span class="stats-number">5000+</span>
+                    <span>E-Journals</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-box">
+                    <span class="stats-number">500+</span>
+                    <span>Seating Capacity</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-box">
+                    <span class="stats-number">24/7</span>
+                    <span>Digital Access</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <h2 class="section-title text-center mb-5">Library Features</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">📚</div>
+                        <h5 class="card-title fw-bold">Extensive Collections</h5>
+                        <p class="card-text">Access to over 150,000 books, journals, periodicals, and reference materials across all disciplines.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">💻</div>
+                        <h5 class="card-title fw-bold">Digital Resources</h5>
+                        <p class="card-text">Online databases, e-books, digital archives, and subscription to leading academic platforms.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">🎧</div>
+                        <h5 class="card-title fw-bold">Study Spaces</h5>
+                        <p class="card-text">Quiet reading rooms, group study areas, and individual carrels for focused academic work.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">🔍</div>
+                        <h5 class="card-title fw-bold">Research Support</h5>
+                        <p class="card-text">Professional librarians available to assist with research, citations, and information literacy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">🖨️</div>
+                        <h5 class="card-title fw-bold">Technology Center</h5>
+                        <p class="card-text">Computer lab, printing services, scanning facilities, and audiovisual equipment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">☕</div>
+                        <h5 class="card-title fw-bold">Café & Lounge</h5>
+                        <p class="card-text">Comfortable reading lounge and café area for relaxed studying and social interaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timings -->
+        <h2 class="section-title text-center mb-4">Library Hours</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <table class="table timing-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Opening Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday - Friday</td>
+                            <td>8:00 AM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>10:00 AM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center fw-bold">Digital Resources: Available 24/7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section text-center p-5">
+            <h3 class="mb-3">Need Help Finding Resources?</h3>
+            <p class="mb-4">Our librarians are here to assist you with research, citations, and navigating our collections.</p>
+            <button class="btn btn-custom">Contact Library Services</button>
+        </div>
     </div>
     <div id="footer"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../script.js"></script>
-    <script>
-      let i = 0;
-      function move(n) {
-        const s = document.querySelector(".slides");
-        const t = s.children.length;
-        i = (i + n + t) % t;
-        s.style.transform = `translateX(-${i * 100}%)`;
-      }
-      setInterval(() => move(1), 4000);
-    </script>
-  </body>
+</body>
 </html>
